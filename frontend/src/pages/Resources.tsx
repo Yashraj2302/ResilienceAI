@@ -33,34 +33,43 @@ export default function Resources() {
   );
 
   return (
-    <div className="p-6">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Emergency Resources</h1>
-        <p className="text-gray-600">Access guides, tools, and information for emergency preparedness</p>
+    <div className="p-6 min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50">
+      <div className="mb-8 slide-in-up">
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">
+          Emergency Resources
+        </h1>
+        <p className="text-gray-600 text-lg">Access guides, tools, and information for emergency preparedness</p>
       </div>
 
-      <div className="mb-6">
-        <input
-          type="text"
-          placeholder="Search resources..."
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+      <div className="mb-8">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search resources..."
+            className="input-3d w-full pl-12 text-gray-900 placeholder-gray-500"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+            🔍
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredResources.map((resource) => (
-          <div key={resource.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-            <div className="flex items-start justify-between mb-4">
-              <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">
+          <div key={resource.id} className="card-3d p-6 hover:scale-105 group">
+            <div className="flex items-start justify-between mb-6">
+              <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold rounded-full">
                 {resource.category}
               </span>
-              <span className="text-gray-500 text-sm">{resource.type}</span>
+              <span className="text-gray-500 text-sm bg-gray-100 px-2 py-1 rounded-full">{resource.type}</span>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{resource.title}</h3>
-            <p className="text-gray-600 mb-4">{resource.description}</p>
-            <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+              {resource.title}
+            </h3>
+            <p className="text-gray-600 mb-6 leading-relaxed">{resource.description}</p>
+            <button className="btn-3d-primary w-full group-hover:scale-105">
               Access Resource
             </button>
           </div>
@@ -68,10 +77,10 @@ export default function Resources() {
       </div>
 
       {filteredResources.length === 0 && (
-        <div className="text-center py-12">
-          <div className="text-4xl text-gray-400 mb-4">📚</div>
-          <h3 className="text-lg font-medium text-gray-900 mb-2">No resources found</h3>
-          <p className="text-gray-500">Try adjusting your search terms</p>
+        <div className="text-center py-16">
+          <div className="text-8xl mb-6 floating-animation">📚</div>
+          <h3 className="text-2xl font-bold text-gray-700 mb-4">No resources found</h3>
+          <p className="text-gray-500 text-lg">Try adjusting your search terms</p>
         </div>
       )}
     </div>
