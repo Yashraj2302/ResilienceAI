@@ -8,8 +8,8 @@ const Dashboard: React.FC = () => {
   const { data: emergencies } = useQuery('emergencies', fetchEmergencies);
   const { data: stats } = useQuery('community-stats', fetchCommunityStats);
 
-  const activeEmergencies = emergencies?.filter(e => e.status === 'active') || [];
-  const criticalEmergencies = activeEmergencies.filter(e => e.severity === 'critical');
+  const activeEmergencies = emergencies?.filter((e: any) => e.status === 'active') || [];
+  const criticalEmergencies = activeEmergencies.filter((e: any) => e.severity === 'critical');
 
   // Mock data for charts
   const riskTrendData = [
@@ -142,7 +142,7 @@ const Dashboard: React.FC = () => {
               Recent Emergencies
             </h3>
             <div className="space-y-3">
-              {activeEmergencies.slice(0, 5).map((emergency) => (
+              {activeEmergencies.slice(0, 5).map((emergency: any) => (
                 <div key={emergency._id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                   <div className="flex items-center space-x-3">
                     <div className={`w-3 h-3 rounded-full ${
