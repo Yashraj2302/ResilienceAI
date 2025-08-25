@@ -23,17 +23,29 @@ const Dashboard: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-8 p-6 min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <div className="flex justify-between items-center slide-in-up">
-        <div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-            Crisis Response Dashboard
-          </h1>
-          <p className="text-gray-600">Real-time monitoring and emergency response coordination</p>
-        </div>
-        <div className="flex items-center space-x-3 card-3d p-4">
-          <div className="w-4 h-4 bg-green-500 rounded-full pulse-glow"></div>
-          <span className="text-sm font-semibold text-gray-700">System Active</span>
+    <div className="space-y-8 p-6 min-h-screen relative overflow-hidden">
+      {/* Enhanced Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl floating-animation"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-green-400/10 to-teal-400/10 rounded-full blur-3xl floating-delayed"></div>
+      </div>
+      
+      <div className="relative z-10">
+        <div className="flex justify-between items-center slide-in-up">
+          <div>
+            <h1 className="text-5xl font-black mb-3">
+              <span className="holographic">Crisis Response</span>
+              <br />
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
+                Dashboard
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 neon-glow">Real-time monitoring and emergency response coordination</p>
+          </div>
+          <div className="flex items-center space-x-4 card-3d p-6 glass-effect tilt-3d">
+            <div className="w-5 h-5 bg-green-500 rounded-full pulse-glow floating-animation"></div>
+            <span className="text-lg font-bold text-gray-700">System Active</span>
+          </div>
         </div>
       </div>
 

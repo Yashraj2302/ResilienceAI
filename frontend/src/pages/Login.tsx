@@ -28,17 +28,40 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div className="card-3d p-8 glass-effect backdrop-blur-lg slide-in-up">
-          <div className="text-center mb-8">
-            <div className="mx-auto h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 shadow-lg floating-animation mb-6">
-              <Shield className="h-10 w-10 text-white" />
+    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Enhanced Background with 3D Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl floating-animation"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl floating-delayed"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-indigo-500/10 to-blue-500/10 rounded-full blur-3xl floating-slow"></div>
+      </div>
+      
+      {/* Floating Decorative Elements */}
+      <div className="absolute top-10 left-10 text-6xl opacity-20 floating-animation">🛡️</div>
+      <div className="absolute top-20 right-20 text-5xl opacity-20 floating-delayed">⚡</div>
+      <div className="absolute bottom-20 left-20 text-4xl opacity-20 floating-slow">🌟</div>
+      <div className="absolute bottom-10 right-10 text-5xl opacity-20 floating-animation">🚀</div>
+      
+      <div className="max-w-lg w-full space-y-8 relative z-10">
+        <div className="card-3d p-10 glass-effect-dark backdrop-blur-xl slide-in-up tilt-3d relative overflow-hidden">
+          {/* Shimmer Effect */}
+          <div className="shimmer absolute inset-0"></div>
+          
+          <div className="text-center mb-10 relative z-10">
+            {/* Enhanced Shield Icon */}
+            <div className="relative inline-block mb-6">
+              <div className="mx-auto h-20 w-20 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 shadow-2xl floating-animation bounce-3d">
+                <Shield className="h-12 w-12 text-white" />
+              </div>
+              <div className="absolute inset-0 mx-auto h-20 w-20 bg-blue-500/30 rounded-full blur-xl pulse-glow"></div>
             </div>
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-              ResilienceAI
+            
+            {/* Enhanced Title */}
+            <h2 className="text-5xl font-black mb-4">
+              <span className="holographic">ResilienceAI</span>
             </h2>
-            <p className="text-gray-300 text-lg">
+            
+            <p className="text-xl text-gray-300 mb-6 neon-glow">
               Crisis response platform for communities
             </p>
           </div>

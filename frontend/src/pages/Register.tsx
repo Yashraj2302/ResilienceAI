@@ -61,30 +61,54 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div className="card-3d p-8 glass-effect backdrop-blur-lg slide-in-up">
-          <div className="text-center mb-8">
-            <div className="text-6xl mb-4 floating-animation">🚀</div>
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
-              Join ResilienceAI
+    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Enhanced Background with 3D Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl floating-animation"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl floating-delayed"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-full blur-3xl floating-slow"></div>
+      </div>
+      
+      {/* Floating Decorative Elements */}
+      <div className="absolute top-10 left-10 text-6xl opacity-20 floating-animation">✨</div>
+      <div className="absolute top-20 right-20 text-5xl opacity-20 floating-delayed">🛡️</div>
+      <div className="absolute bottom-20 left-20 text-4xl opacity-20 floating-slow">⚡</div>
+      <div className="absolute bottom-10 right-10 text-5xl opacity-20 floating-animation">🌟</div>
+      
+      <div className="max-w-lg w-full space-y-8 relative z-10">
+        <div className="card-3d p-10 glass-effect-dark backdrop-blur-xl slide-in-up tilt-3d relative overflow-hidden">
+          {/* Shimmer Effect */}
+          <div className="shimmer absolute inset-0"></div>
+          
+          <div className="text-center mb-10 relative z-10">
+            {/* Enhanced Floating Icon */}
+            <div className="relative inline-block mb-6">
+              <div className="text-8xl floating-animation bounce-3d">🚀</div>
+              <div className="absolute inset-0 text-8xl blur-xl opacity-50 floating-animation">🚀</div>
+            </div>
+            
+            {/* Enhanced Title */}
+            <h2 className="text-5xl font-black mb-4">
+              <span className="holographic">Join ResilienceAI</span>
             </h2>
-            <p className="text-gray-300 mb-4">
+            
+            <p className="text-xl text-gray-300 mb-6 neon-glow">
               Create your crisis response account
             </p>
-            <div className="text-center space-y-2">
-              <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-3 mb-4">
-                <p className="text-sm text-blue-300">
-                  🚀 <strong>Demo Mode:</strong> Registration works with mock data while backend deploys
-                </p>
-              </div>
-              <p className="text-sm text-gray-400">
-                Already have an account?{' '}
-                <Link to="/login" className="font-medium text-purple-400 hover:text-purple-300 transition-colors">
-                  Sign in here
-                </Link>
+            
+            {/* Enhanced Demo Mode Banner */}
+            <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 rounded-xl p-4 mb-6 glass-effect shimmer">
+              <p className="text-sm text-blue-300 font-semibold">
+                🚀 <span className="holographic text-base">Demo Mode:</span> Registration works with mock data while backend deploys
               </p>
             </div>
+            
+            <p className="text-sm text-gray-400">
+              Already have an account?{' '}
+              <Link to="/login" className="font-medium text-purple-400 hover:text-purple-300 transition-colors neon-glow">
+                Sign in here
+              </Link>
+            </p>
           </div>
           
           <form className="space-y-6" onSubmit={handleSubmit}>

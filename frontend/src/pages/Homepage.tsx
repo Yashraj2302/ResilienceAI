@@ -5,10 +5,10 @@ import Footer from '../components/Footer';
 
 const Homepage = () => {
   const stats = [
-    { value: '85%', label: 'Faster Detection', icon: '⚡' },
-    { value: '60%', label: 'Better Resource Allocation', icon: '📊' },
-    { value: '2M+', label: 'Lives Impacted', icon: '❤️' },
-    { value: '150+', label: 'Communities Served', icon: '🏘️' }
+    { value: '85%', label: 'Faster Detection', icon: '⚡', color: 'from-yellow-400 to-orange-500' },
+    { value: '60%', label: 'Better Resource Allocation', icon: '📊', color: 'from-blue-400 to-purple-500' },
+    { value: '2M+', label: 'Lives Impacted', icon: '❤️', color: 'from-pink-400 to-red-500' },
+    { value: '150+', label: 'Communities Served', icon: '🏘️', color: 'from-green-400 to-teal-500' }
   ];
 
   const solutions = [
@@ -68,29 +68,56 @@ const Homepage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       <Header />
-      {/* Hero Section */}
-      <section className="relative py-20 px-6 text-center overflow-hidden mt-16">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-green-600/10"></div>
+      {/* Enhanced Hero Section with 3D Effects */}
+      <section className="relative py-32 px-6 text-center overflow-hidden mt-16">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl floating-animation"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-green-400/20 to-teal-400/20 rounded-full blur-3xl floating-delayed"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-pink-400/10 to-orange-400/10 rounded-full blur-3xl floating-slow"></div>
+        </div>
+        
         <div className="relative max-w-6xl mx-auto">
-          <div className="floating-animation mb-8">
-            <Shield className="h-20 w-20 text-blue-600 mx-auto mb-6" />
+          {/* 3D Floating Shield Icon */}
+          <div className="floating-animation mb-12 tilt-3d">
+            <div className="relative inline-block">
+              <Shield className="h-24 w-24 text-blue-600 mx-auto mb-6 drop-shadow-2xl" />
+              <div className="absolute inset-0 h-24 w-24 mx-auto bg-blue-600/20 rounded-full blur-xl pulse-glow"></div>
+            </div>
           </div>
-          <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent mb-6">
-            AI-Powered Crisis Response for Stronger Communities
+          
+          {/* Enhanced Title with Holographic Effect */}
+          <h1 className="text-7xl font-black mb-8 slide-in-up">
+            <span className="holographic">AI-Powered Crisis Response</span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
+              for Stronger Communities
+            </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Detect, respond, and recover faster with ResilienceAI. Our intelligent platform helps communities 
-            prepare for, respond to, and recover from emergencies with unprecedented speed and coordination.
+          
+          {/* Enhanced Subtitle */}
+          <p className="text-2xl text-gray-700 mb-12 max-w-4xl mx-auto leading-relaxed slide-in-up" style={{animationDelay: '0.2s'}}>
+            Detect, respond, and recover faster with <span className="font-bold text-blue-600">ResilienceAI</span>. 
+            Our intelligent platform helps communities prepare for, respond to, and recover from emergencies 
+            with <span className="neon-glow text-purple-600">unprecedented speed</span> and coordination.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/demo" className="btn-3d-primary text-lg px-8 py-4">
-              Request a Demo
-              <ArrowRight className="ml-2 h-5 w-5" />
+          
+          {/* Enhanced CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center slide-in-up" style={{animationDelay: '0.4s'}}>
+            <Link to="/demo" className="btn-3d-primary text-xl px-12 py-5 shimmer">
+              🚀 Request a Demo
+              <ArrowRight className="ml-3 h-6 w-6" />
             </Link>
-            <Link to="/register" className="btn-3d bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50 text-lg px-8 py-4">
-              Get Started Free
+            <Link to="/register" className="btn-3d glass-effect text-blue-600 border-2 border-blue-600/30 hover:bg-blue-50/50 text-xl px-12 py-5">
+              ✨ Get Started Free
             </Link>
           </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-10 left-10 text-6xl floating-animation opacity-20">🛡️</div>
+          <div className="absolute top-20 right-20 text-5xl floating-delayed opacity-20">⚡</div>
+          <div className="absolute bottom-10 left-20 text-4xl floating-slow opacity-20">🌍</div>
+          <div className="absolute bottom-20 right-10 text-5xl floating-animation opacity-20">🤝</div>
         </div>
       </section>
 
@@ -140,23 +167,58 @@ const Homepage = () => {
         </div>
       </section>
 
-      {/* Impact Stats */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-12">
-            Real Impact, Measurable Results
+      {/* Enhanced Impact Stats with 3D Effects */}
+      <section className="py-20 px-6 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl floating-animation"></div>
+          <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-gradient-to-r from-green-400/10 to-teal-400/10 rounded-full blur-3xl floating-delayed"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative">
+          <h2 className="text-5xl font-black text-center mb-16 slide-in-up">
+            <span className="holographic">Real Impact,</span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
+              Measurable Results
+            </span>
           </h2>
+          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="card-3d p-6 text-center hover:scale-105 group">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
+              <div 
+                key={index} 
+                className="card-3d p-8 text-center tilt-3d group relative overflow-hidden"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
+                {/* Gradient Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-5 group-hover:opacity-10 transition-opacity`}></div>
+                
+                {/* Floating Icon */}
+                <div className="text-6xl mb-6 floating-animation group-hover:scale-125 transition-transform duration-500 relative z-10">
                   {stat.icon}
                 </div>
-                <div className="text-3xl font-bold text-blue-600 mb-2">{stat.value}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                
+                {/* Animated Value */}
+                <div className={`text-4xl font-black mb-3 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent relative z-10`}>
+                  {stat.value}
+                </div>
+                
+                {/* Label */}
+                <div className="text-gray-700 font-semibold text-lg relative z-10">{stat.label}</div>
+                
+                {/* Glow Effect */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}></div>
+                
+                {/* Shimmer Effect */}
+                <div className="shimmer absolute inset-0"></div>
               </div>
             ))}
           </div>
+          
+          {/* Floating Decorative Elements */}
+          <div className="absolute -top-10 -left-10 text-8xl opacity-10 floating-slow">📊</div>
+          <div className="absolute -bottom-10 -right-10 text-8xl opacity-10 floating-animation">🎯</div>
         </div>
       </section>
 
