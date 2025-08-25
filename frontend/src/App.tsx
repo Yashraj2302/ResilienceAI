@@ -3,6 +3,11 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { AuthProvider } from './contexts/AuthContext';
 import { SocketProvider } from './contexts/SocketContext';
 import Layout from './components/Layout';
+import Homepage from './pages/Homepage';
+import About from './pages/About';
+import Solutions from './pages/Solutions';
+import Features from './pages/Features';
+import Demo from './pages/Demo';
 import Dashboard from './pages/Dashboard';
 import EmergencyMap from './pages/EmergencyMap';
 import Resources from './pages/Resources';
@@ -21,9 +26,17 @@ function App() {
           <Router>
             <div className="App">
               <Routes>
+                {/* Public Routes */}
+                <Route path="/" element={<Homepage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/solutions" element={<Solutions />} />
+                <Route path="/features" element={<Features />} />
+                <Route path="/demo" element={<Demo />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/" element={<Layout />}>
+                
+                {/* Protected Dashboard Routes */}
+                <Route path="/dashboard" element={<Layout />}>
                   <Route index element={<Dashboard />} />
                   <Route path="map" element={<EmergencyMap />} />
                   <Route path="resources" element={<Resources />} />
