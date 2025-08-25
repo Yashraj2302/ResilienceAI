@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -8,11 +9,44 @@ export default function Register() {
     password: '',
     confirmPassword: ''
   });
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  
+  const { register } = useAuth();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement registration logic
-    console.log('Register:', formData);
+    setError('');
+    setLoading(true);
+
+    // Validate passwords match
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match');
+      setLoading(false);
+      return;
+    }
+
+    // Validate password strength
+    if (formData.password.length < 6) {
+      setError('Password must be at least 6 characters long');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      await register({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password
+      });
+      // Redirect to dashboard after successful registration
+      navigate('/dashboard');
+    } catch (err: any) {
+      setError(err.response?.data?.message || 'Registration failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,6 +77,12 @@ export default function Register() {
           </div>
           
           <form className="space-y-6" onSubmit={handleSubmit}>
+            {error && (
+              <div className="card-3d bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-3 rounded-lg">
+                {error}
+              </div>
+            )}
+            
             <div className="space-y-4">
               <div>
                 <input
@@ -93,9 +133,10 @@ export default function Register() {
             <div>
               <button
                 type="submit"
-                className="btn-3d-primary w-full text-lg font-semibold"
+                disabled={loading}
+                className="btn-3d-primary w-full text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Create Account
+                {loading ? 'Creating Account...' : 'Create Account'}
               </button>
             </div>
           </form>

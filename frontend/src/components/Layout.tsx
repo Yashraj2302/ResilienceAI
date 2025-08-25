@@ -12,10 +12,10 @@ const Layout: React.FC = () => {
   }
 
   const navigation = [
-    { name: 'Dashboard', href: '/', icon: Home },
-    { name: 'Emergency Map', href: '/map', icon: Map },
-    { name: 'Resources', href: '/resources', icon: Package },
-    { name: 'Community', href: '/community', icon: Users },
+    { name: 'Dashboard', href: '/dashboard', icon: Home },
+    { name: 'Emergency Map', href: '/dashboard/map', icon: Map },
+    { name: 'Resources', href: '/dashboard/resources', icon: Package },
+    { name: 'Community', href: '/dashboard/community', icon: Users },
   ];
 
   return (

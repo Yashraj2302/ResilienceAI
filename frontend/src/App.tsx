@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { AuthProvider } from './contexts/AuthContext';
 import { SocketProvider } from './contexts/SocketContext';
 import Layout from './components/Layout';
+import ProtectedRoute from './components/ProtectedRoute';
 import Homepage from './pages/Homepage';
 import About from './pages/About';
 import Solutions from './pages/Solutions';
@@ -36,7 +37,11 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 
                 {/* Protected Dashboard Routes */}
-                <Route path="/dashboard" element={<Layout />}>
+                <Route path="/dashboard" element={
+                  <ProtectedRoute>
+                    <Layout />
+                  </ProtectedRoute>
+                }>
                   <Route index element={<Dashboard />} />
                   <Route path="map" element={<EmergencyMap />} />
                   <Route path="resources" element={<Resources />} />
