@@ -4,6 +4,8 @@ import { AuthProvider } from './contexts/AuthContext';
 import { SocketProvider } from './contexts/SocketContext';
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
+import Background3D from './components/Background3D';
+import MouseParallax3D from './components/MouseParallax3D';
 import Homepage from './pages/Homepage';
 import About from './pages/About';
 import Solutions from './pages/Solutions';
@@ -26,6 +28,8 @@ function App() {
         <SocketProvider>
           <Router>
             <div className="App">
+              <Background3D />
+              <MouseParallax3D />
               <Routes>
                 {/* Public Routes */}
                 <Route path="/" element={<Homepage />} />

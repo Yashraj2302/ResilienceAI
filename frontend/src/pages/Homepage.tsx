@@ -66,16 +66,10 @@ const Homepage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen perspective-container">
       <Header />
       {/* Enhanced Hero Section with 3D Effects */}
-      <section className="relative py-32 px-6 text-center overflow-hidden mt-16">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl floating-animation"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-green-400/20 to-teal-400/20 rounded-full blur-3xl floating-delayed"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-pink-400/10 to-orange-400/10 rounded-full blur-3xl floating-slow"></div>
-        </div>
+      <section className="relative py-32 px-6 text-center overflow-hidden mt-16 scene-3d">
         
         <div className="relative max-w-6xl mx-auto">
           {/* 3D Floating Shield Icon */}
@@ -149,7 +143,7 @@ const Homepage = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {howItWorks.map((step, index) => (
-              <div key={index} className="card-3d p-8 text-center hover:scale-105 group relative">
+              <div key={index} className="card-3d hover-3d-lift card-stack-3d p-8 text-center group relative">
                 <div className="text-sm font-bold text-blue-600 bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-6">
                   {step.step}
                 </div>
