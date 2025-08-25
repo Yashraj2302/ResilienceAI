@@ -72,12 +72,19 @@ export default function Register() {
             <p className="text-gray-300 mb-4">
               Create your crisis response account
             </p>
-            <p className="text-sm text-gray-400">
-              Already have an account?{' '}
-              <Link to="/login" className="font-medium text-purple-400 hover:text-purple-300 transition-colors">
-                Sign in here
-              </Link>
-            </p>
+            <div className="text-center space-y-2">
+              <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-3 mb-4">
+                <p className="text-sm text-blue-300">
+                  🚀 <strong>Demo Mode:</strong> Registration works with mock data while backend deploys
+                </p>
+              </div>
+              <p className="text-sm text-gray-400">
+                Already have an account?{' '}
+                <Link to="/login" className="font-medium text-purple-400 hover:text-purple-300 transition-colors">
+                  Sign in here
+                </Link>
+              </p>
+            </div>
           </div>
           
           <form className="space-y-6" onSubmit={handleSubmit}>

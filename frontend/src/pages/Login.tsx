@@ -94,7 +94,12 @@ const Login: React.FC = () => {
               </button>
             </div>
 
-            <div className="text-center">
+            <div className="text-center space-y-3">
+              <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-3">
+                <p className="text-sm text-blue-300">
+                  🚀 <strong>Demo Mode:</strong> Use any email/password or create new account
+                </p>
+              </div>
               <span className="text-gray-300">
                 Don't have an account?{' '}
                 <Link to="/register" className="font-medium text-blue-400 hover:text-blue-300 transition-colors">
